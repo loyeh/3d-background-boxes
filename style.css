@@ -40,7 +40,7 @@
 .container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 4vmin;
+  gap: 0;
   transition: 2s;
 }
 
@@ -86,11 +86,7 @@
 }
 
 .container.active {
-  gap: 0;
-}
-
-.container.active .row {
-  gap: 0;
+  gap: 4vmin;
 }
 
 .container.active .box {

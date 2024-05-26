@@ -20,5 +20,5 @@ function positionFix() {
 positionFix();
 magicBtn.addEventListener("click", () => {
   container.classList.toggle("active");
-  setTimeout(positionFix, 2000);
+  // container.addEventListener("transitionend", positionFix);
 });
