@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #b8860b;
+  color: white;
+  padding: 2vmin 4vmin;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+.button:hover {
+  background-color: #9e740a;
+}
+
+.button:active {
+  scale: 0.95;
+}
+
+.button i {
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 4vmin;
+  transition: 2s;
+}
+
+.box {
+  width: 20vmin;
+  height: 20vmin;
+  background-image: url("./images/cat.gif");
+  /* background-size: 400%; */
+  background-position: 0px 0px;
+  position: relative;
+  transition: 2s;
+}
+
+.box::after {
+  position: absolute;
+  content: "";
+  background-color: #839e0a;
+  width: 10%;
+  height: 100%;
+  left: 100%;
+  top: 5%;
+  transform: skewY(45deg);
+}
+
+.box::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 10%;
+  background-color: #abcf0a;
+  top: 100%;
+  left: 5%;
+  transform: skewX(45deg);
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container.active {
+  gap: 0;
+}
+
+.container.active .row {
+  gap: 0;
+}
+
+.container.active .box {
+  transform: rotate(360deg);
+}
